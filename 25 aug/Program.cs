@@ -9,7 +9,9 @@ namespace _25_aug
             //DoWhile();
             //forloop();
             //NastedFor();
-            PatternLoop();
+            //MyArray();
+            //Console.WriteLine(Methods(3,4));
+        }
             
             static void DoWhile() 
             { 
@@ -48,93 +50,24 @@ namespace _25_aug
                 }
             }
 
-            static void PatternLoop()
+            static void MyArray()
             {
-                /*for (int i = 0; i < 4; i++)
+                int[] numbers = new int[5] {1,2,3,4,5};
+                for (int i = 0; i < 5; i++)
                 {
-                    for (int b = 0; b < 8; b++)
-                    {
-                        if (b==i || b==i)
-                        {
-                            Console.Write("#");
-                        }
-                        else
-                        {
-                            Console.Write("-");
-                        }
-                        
-                    }
-                    Console.WriteLine();
+                    Console.WriteLine($"index {i} har vardet {numbers[i]}");
                 }
-                Console.WriteLine("A");
-
-                for (int i = 0; i < 4; i++)
+                foreach (var i in numbers)
                 {
-                    for (int b = 0; b < 8; b++)
-                    {
-                        if (b == i || b == i)
-                        {
-                            Console.Write("#");
-                        }
-                        else if (b == i + 4)
-                        {
-                            Console.Write("#");
-                        }
-                        else
-                        {
-                            Console.Write("-");
-                        }
-
-                    }
-                    Console.WriteLine();
+                    Console.WriteLine(i);
                 }
-                Console.WriteLine("B");
-
-                for (int i = 0; i < 4; i++)
-                {
-                    for (int b = 0; b < 8; b++)
-                    {
-                        if (b == i*2)
-                        {
-                            Console.Write("#");
-                        }
-                        else if (b==i*2+1)
-                        {
-                            Console.Write("#");
-                        }
-                        else
-                        {
-                            Console.Write("-");
-                        }
-
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine("C");*/
-
-
-                for (int i = 1; i < 5; i++)
-                {
-                    for (int b = 1; b < 9; b++)
-                    {
-                        if (b+2 == 2*i)
-                        {
-                            Console.Write("#");
-                        }
-                        if (i == b)
-                        {
-                            Console.Write("#");
-                        }
-                        else
-                        {
-                            Console.Write("-");
-                        }
-
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine("D");
+                Console.WriteLine("red\nrad2\tEfter tap\\");
+                Console.WriteLine(@"red\nrad2\tEfter tap\\");
             }
-        }
+
+            static int Methods(int a, int b)
+            {
+                return a + b;
+            }
     }
 }
