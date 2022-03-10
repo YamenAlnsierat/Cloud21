@@ -15,32 +15,27 @@ namespace Lab1
             for (int i = 0; i < text.Length; i++)
             {
                 bool foundSubString = false;
-                int startIndex = 0;
+                int startIndex = i;
                 int endIndex = text.Length;
-                // Here, the program loops to define "startIndex" and "endIdex" to each line, if both found.
-                for (int t = i; t < text.Length; t++)
+
+                if (!char.IsDigit(text[i])) continue;
+
+                for (int t = i + 1; t < text.Length; t++)
                 {
-                    if (!char.IsDigit(text[i]) && i != text.Length - 1)
+                    if (!char.IsDigit(text[t])) break;
+
+                    if (text[i] == text[t])
                     {
-                        i++; // the values increses by 1 if it occurs letter, to pass it. 
-                        t++;
-                    }
-                    if (char.IsDigit(text[i]))
-                    {
-                        startIndex = i;
-                    }
-                    if (!char.IsDigit(text[t]) || (t > i && text[t - 1] == text[i] && t - 1 != i))
-                    {
-                        endIndex = t;
+                        endIndex = t + 1;
                         foundSubString = true;
                         break;
                     }
                 }
-                //Here, checks the program if the current line has a value to both start-and endIndex.
-                if (text[startIndex] == text[endIndex - 1] && startIndex != endIndex - 1 && char.IsDigit(text[startIndex]))
+
+                if (foundSubString)
                 {
                     int leanth = 0;
-                    //Here, the program prints only the lines were confirmed to contain start-and endIndex.
+
                     for (int j = 0; j < text.Length; j++)
                     {
                         if (j == startIndex)
@@ -53,13 +48,13 @@ namespace Lab1
                         }
                         if (j >= startIndex && j < endIndex)
                         {
-                            leanth++; //this is the leanth of Substing method.
+                            leanth++;
                         }
                         Console.Write(text[j]);
                     }
-                    string number = text.Substring(startIndex, leanth);                    
-                    long sum = long.Parse(number); //sum is the marked number in each line and it resets to 0 for each line.                    
-                    totSum += sum; //totSum is the sum of all marked number in all lines.
+                    string number = text.Substring(startIndex, leanth);
+                    long sum = long.Parse(number);
+                    totSum += sum;
                     Console.WriteLine();
                     Console.ResetColor();
                 }
